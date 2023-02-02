@@ -38,29 +38,31 @@ class server_loader:
         file.close()
 
     def get_map_name(self):
-        return self.getProperties()["mapname"]
+        return self.get_properties()["mapname"]
 
     def get_host_name(self) -> str:
-        return self.getProperties()["hostname"]
+        return self.get_properties()["hostname"]
 
     def get_host_max_players(self) -> str:
-        return self.getProperties()["maxplayers"]
+        return self.get_properties()["maxplayers"]
 
     def get_game_type(self):
-        return self.getProperties()["gametype"]
+        return self.get_properties()["gametype"]
 
-    def get_current_players(self):
-        return self.getProperties()["numplayers"]
+    def get_current_players_count(self):
+        return self.get_properties()["numplayers"]
 
-    def getProperties(self):
-        # print(self.server)
+    def get_properties(self):
         return self.server["properties"]
 
     def get_team_one(self):
-        return self.getProperties()["bf2_team1"]
+        return self.get_properties()["bf2_team1"]
 
     def get_team_two(self):
-        return self.getProperties()["bf2_team2"]
+        return self.get_properties()["bf2_team2"]
 
     def get_map_size(self):
-        return self.getProperties()["bf2_mapsize"]
+        return self.get_properties()["bf2_mapsize"]
+
+    def get_players(self) -> list:
+        return self.server["players"]
